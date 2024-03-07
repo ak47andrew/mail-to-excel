@@ -70,15 +70,15 @@ class Layoffs(Entries):
         if "(" in self.worker:
             return [
                 self.worker.split(" (")[0],
-                self.worker.split(" (")[1][:-1],
                 self.post,
                 self.date.strftime('%d.%m.%Y'),
-                self.unit
+                self.unit,
+                self.worker.split(" (")[1][:-1],
             ]
         return [
             self.worker,
-            "",
             self.post,
             self.date.strftime('%d.%m.%Y'),
-            self.unit
+            self.unit,
+            "",
         ]
